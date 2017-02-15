@@ -21,7 +21,7 @@ $m-gutter: 1rem;
 .card {
   max-width: 30rem;
   margin: 0 auto;
-  border: darken($c-lightgrey, 50%);
+  box-shadow: 0.2rem 0.2rem 0.4rem darken($c-lightgrey, 25%);
 }
 
 
@@ -50,10 +50,10 @@ $m-gutter: 1rem;
 }
 
 
-// USER INFOR STYLES
+// USER INFO STYLES
 .user-info {
 
-  // PETA HATES THIS SELECTOR
+  // PETA HATES THIS SELECTOR, but not because it styles all but the first child in a parent element
   > * + * {
     border-top: 0.1rem solid $c-lightgrey;
   }
@@ -63,7 +63,7 @@ $m-gutter: 1rem;
     margin: 0;
     padding: 1.5rem 1rem;
 
-    // WIZARD SPELLS that put some padding to the right of the span fa icons inside the p's inside .user-info
+    // WIZARD SPELLS inside of wizard spells that put some padding to the right of the span fa icons inside the p's inside // .user-info
     > * {
       padding-right: $m-gutter;
       font-size: 1.25rem;

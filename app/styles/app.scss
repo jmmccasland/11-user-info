@@ -1,13 +1,73 @@
 // @import 'yoga';
 // @import 'normalize';
 
-// $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
-// @import 'font-awesome';
-@import 'box-sizing';
-@import 'resets';
+$fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
+
 
 $c-pukegreen: #a7d076;
+$c-black: #000;
+$c-white: #fefefe;
+$c-lightgrey: #ddd;
 
+$m-gutter: 1rem;
+
+//IMPORTS
+@import 'font-awesome';
+@import 'box-sizing';
+@import 'resets';
+@import 'layout';
+
+// CARD STYLES
+.card {
+  max-width: 30rem;
+  margin: 0 auto;
+  background: $c-white;
+  box-shadow: 0.2rem 0.2rem 0.4rem darken($c-lightgrey, 30%);
+}
+
+
+// HERO STYLES
 .hero {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  padding: $m-gutter;
   background: $c-pukegreen;
+
+
+  &__arrow {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  &__user-photo {
+    height: 10rem;
+    margin: 2rem 0;
+    border-radius: 50%;
+  }
+}
+
+
+// USER INFO STYLES
+.user-info {
+
+  // PETA HATES THIS SELECTOR, but not because it styles all but the first child in a parent element
+  > * + * {
+    border-top: 0.1rem solid $c-lightgrey;
+  }
+
+  // WIZARD SPELLS that put some padding around the p elements in .user-info
+  > * {
+    margin: 0;
+    padding: 1.5rem 1rem;
+
+    // WIZARD SPELLS inside of wizard spells that put some padding to the right of the span fa icons inside the p's inside // .user-info
+    > * {
+      padding-right: $m-gutter;
+      font-size: 1.25rem;
+    }
+  }
 }
